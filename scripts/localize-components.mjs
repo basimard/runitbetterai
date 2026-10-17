@@ -1,0 +1,11 @@
+﻿import ts from 'typescript';import fs from 'node:fs';
+const files=['website.tsx','welcome.tsx','business-story.tsx','interactions.tsx','sample-view.tsx'];const attributes=new Set(['placeholder','alt','title','aria-label','defaultValue']);
+for(const file of files){let src=fs.readFileSync('app/'+file,'utf8');const sf=ts.createSourceFile(file,src,ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);const edits=[];
+function trExpr(n){const a=n.getStart(sf),b=n.end;edits.push([a,b,'tr('+src.slice(a,b)+')']);}
+function visit(n){if(ts.isFunctionDeclaration(n)&&n.name&&/^[A-Z]/.test(n.name.text)&&n.body)edits.push([n.body.getStart(sf)+1,n.body.getStart(sf)+1,'\n const {tr}=useTranslation();\n']);
+if(ts.isJsxText(n)&&/[A-Za-z]/.test(n.text)){const raw=n.text;const value=raw.replace(/\s+/g,' ');const clean=value.trim().replace(/&amp;/g,'&').replace(/&nbsp;/g,'\u00a0');if(!['RunIt','Better','AI','YOUR LOCAL PRO','Your Local Pro','yourlocalbusiness.com'].includes(clean))edits.push([n.pos,n.end,(value.startsWith(' ')?'{" "}':'')+'{tr('+JSON.stringify(clean)+')}' +(value.endsWith(' ')?'{" "}':'')]);return;}
+if(ts.isJsxAttribute(n)&&attributes.has(n.name.text)){if(n.initializer&&ts.isStringLiteral(n.initializer)){if(n.initializer.text)edits.push([n.initializer.getStart(sf),n.initializer.end,'{tr('+JSON.stringify(n.initializer.text)+')}']);}else if(n.initializer&&ts.isJsxExpression(n.initializer)&&n.initializer.expression){trExpr(n.initializer.expression);}return;}
+if(ts.isJsxExpression(n)&&n.expression&&!ts.isJsxAttribute(n.parent)){const e=n.expression;if(!ts.isJsxElement(e)&&!ts.isJsxSelfClosingElement(e)&&!ts.isJsxFragment(e)&&!(ts.isCallExpression(e)&&ts.isPropertyAccessExpression(e.expression)&&e.expression.name.text==='map')&&!ts.isBinaryExpression(e)&&!ts.isConditionalExpression(e)){if(!ts.isNumericLiteral(e))trExpr(e);}
+else if(ts.isConditionalExpression(e)&&!e.whenTrue.getText(sf).includes('<')&&!e.whenFalse.getText(sf).includes('<'))trExpr(e);}
+ts.forEachChild(n,visit);}
+visit(sf);edits.sort((a,b)=>b[0]-a[0]);for(const [a,b,value] of edits)src=src.slice(0,a)+value+src.slice(b);src=src.replace('"use client";','"use client";\nimport {useTranslation} from "./i18n";');fs.writeFileSync('app/'+file,src);}

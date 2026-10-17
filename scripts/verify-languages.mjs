@@ -1,0 +1,28 @@
+import {spawn} from 'node:child_process';
+import {writeFile,mkdir} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+await mkdir('.sites-runtime/browser',{recursive:true});
+const proc=spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',['--headless=new','--disable-extensions','--no-first-run','--no-default-browser-check','--remote-debugging-port=9337','--user-data-dir='+process.cwd()+'/.sites-runtime/browser-business-final','about:blank'],{windowsHide:true,stdio:'ignore'});
+let ws;
+try{
+ let info;for(let i=0;i<40;i++){try{const r=await fetch('http://127.0.0.1:9337/json');info=await r.json();break;}catch{await new Promise(r=>setTimeout(r,250));}}
+ assert.ok(info,'Browser started');ws=new WebSocket(info.find(t=>t.type==='page' && t.url==='about:blank').webSocketDebuggerUrl);await new Promise(r=>ws.addEventListener('open',r,{once:true}));let id=0;const pending=new Map();ws.addEventListener('message',e=>{const d=JSON.parse(e.data);if(d.id){pending.get(d.id)?.(d);pending.delete(d.id);}});
+ const send=(method,params={})=>new Promise((resolve,reject)=>{const n=++id;const timer=setTimeout(()=>reject(new Error('CDP timeout: '+method)),15000);timer.unref();pending.set(n,d=>d.error?reject(d.error):resolve(d.result));ws.send(JSON.stringify({id:n,method,params}));});
+ const evaluate=async expression=>(await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true})).result.value;
+ await send('Page.enable');await send('Runtime.enable');await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});await send('Page.navigate',{url:'http://127.0.0.1:5174/'});
+ for(let i=0;i<40;i++){if(await evaluate('document.querySelectorAll(".automation-card").length===3'))break;await new Promise(r=>setTimeout(r,250));}await new Promise(r=>setTimeout(r,2500));
+
+ await evaluate('document.querySelector(".language-selector select").value="de";document.querySelector(".language-selector select").dispatchEvent(new Event("change",{bubbles:true}))');
+ await new Promise(r=>setTimeout(r,600));assert.equal(await evaluate('document.documentElement.lang'),'de');assert.match(await evaluate('document.querySelector("h1").textContent'),/Mehr Zeit/);
+ await evaluate('document.querySelector(".service-details").open=true;document.querySelector("#automate .section-buttons button").click();document.querySelectorAll(".faq-item>button").forEach(b=>b.click())');await new Promise(r=>setTimeout(r,200));
+ const inventory=JSON.parse(await (await import('node:fs/promises')).readFile('app/locales/inventory.json','utf8'));
+ const scan=async()=>await evaluate(`(()=>{const keys=new Set(${JSON.stringify(inventory)});const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n,out=[];while(n=walker.nextNode()){if(n.parentElement.closest('script,style,option'))continue;const t=n.textContent.trim().replace(/\s+/g,' ');if(keys.has(t)&&t.length>4)out.push(t);}for(const el of document.querySelectorAll('[placeholder],[aria-label]'))for(const attr of ['placeholder','aria-label'])if(keys.has(el.getAttribute(attr)))out.push(el.getAttribute(attr));return [...new Set(out)]})()`);
+ console.log('English remaining',await scan());
+ await evaluate('document.querySelector(".calm-hero .primary").click()');await new Promise(r=>setTimeout(r,250));assert.match(await evaluate('document.querySelector("dialog").textContent'),/Ihr Unternehmen/);console.log('Modal remaining',await scan());await evaluate('document.querySelector(".modal-close").click()');
+ await evaluate('document.querySelector(".chat-launcher").click();');await new Promise(r=>setTimeout(r,200));assert.match(await evaluate('document.querySelector(".chat-messages").textContent'),/Hallo!/);await evaluate('document.querySelector(".chat-options button").click()');await new Promise(r=>setTimeout(r,200));assert.match(await evaluate('document.querySelector(".chat-input input").getAttribute("aria-label")'),/Unternehmen/);await evaluate('document.querySelector(".chat-header button").click()');
+ for(const width of [1440,1024,768,390,320]){await send('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<720});await evaluate('window.scrollTo({top:0,behavior:"instant"})');await new Promise(r=>setTimeout(r,250));if(await evaluate('document.documentElement.scrollWidth>innerWidth'))console.log('Overflow',width,await evaluate('Array.from(document.querySelectorAll("body *")).filter(e=>e.getBoundingClientRect().right>innerWidth+1).map(e=>({cls:e.className,right:e.getBoundingClientRect().right})).slice(0,15)'));assert.equal(await evaluate('document.documentElement.scrollWidth<=innerWidth'),true,'no overflow '+width);if(width===1440||width===390){const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false,fromSurface:true});await writeFile(`outputs/german-${width}.png`,Buffer.from(shot.data,'base64'));}}
+ await send('Page.reload');await new Promise(r=>setTimeout(r,1800));assert.equal(await evaluate('document.documentElement.lang'),'de');
+ await send('Page.navigate',{url:'http://127.0.0.1:5174/sample/your-local-pro'});await new Promise(r=>setTimeout(r,2200));assert.equal(await evaluate('document.documentElement.lang'),'de');console.log('Sample remaining',await scan());
+ await evaluate('document.querySelector(".language-selector select").value="en";document.querySelector(".language-selector select").dispatchEvent(new Event("change",{bubbles:true}))');
+ console.log('PASS German language switching, contact form, chat, persistence, sample page, responsive layout');
+}finally{ws?.close();proc.kill();}

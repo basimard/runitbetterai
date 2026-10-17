@@ -1,0 +1,336 @@
+.business-story{min-width:0;overflow:hidden;border:1px solid #dddccc;border-radius:18px;background:#fffdf8;box-shadow:0 15px 38px #5b4a220b;position:relative}.story-heading{display:flex;align-items:center;gap:15px;justify-content:space-between;padding:24px 25px 19px}.story-eyebrow{font-size:8px;letter-spacing:1.3px;color:#817254;font-weight:600}.story-heading h2{font-size:19px;letter-spacing:-.5px;line-height:1.4;margin-top:5px}.story-controls{display:flex;gap:5px}.story-controls button{display:grid;place-items:center;width:34px;height:34px;border:1px solid #dedfd3;border-radius:50%;background:white;color:#617256}.story-controls button:hover{background:#eaf0df}.story-route{padding:0 20px 20px;display:grid;grid-template-columns:repeat(5,1fr);gap:7px;border-bottom:1px solid #e9e6da}.story-route button{padding:0;position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;color:#7a8270;min-width:0}.story-route button:not(:last-child):after{content:'';position:absolute;left:calc(50% + 22px);right:calc(-50% + 15px);top:18px;height:1px;background:#dce2d0}.story-route button>span{display:grid;place-items:center;width:37px;height:37px;border:1px solid #e0e4d6;background:#f3f5ed;border-radius:10px}.story-route .current>span{background:#365d42;border-color:#365d42;color:#fff;box-shadow:0 3px 9px #31553920}.story-route .complete>span{background:#e4edd7;color:#457039}.story-route .current{color:#35583d}.story-route small{font-size:9px;line-height:1.5;max-width:80px}.story-stage{padding:22px 25px 18px;min-height:303px;animation:story-enter .45s ease}.story-business{display:flex;align-items:center;position:relative;min-height:103px;padding-top:14px}.shop-front{position:relative;padding:22px 12px 12px;border:1px solid #e1d2b8;border-radius:0 0 8px 8px;background:#fbf0dc;display:flex;align-items:center;flex-direction:column;width:55%;color:#967346}.shop-roof{position:absolute;top:7px;left:0;width:55%;height:21px;display:flex;z-index:1}.shop-roof i{flex:1;background:#759477;border-radius:3px 3px 7px 7px;border-bottom:3px solid #527659}.shop-roof i:nth-child(even){background:#e4e6cc;border-color:#c5c7aa}.shop-front>svg{width:22px;height:22px}.shop-front strong{font-size:12px;line-height:1.4;color:#5a583d;margin-top:6px}.shop-front>span{font-size:8px;color:#81775e;margin-top:4px}.story-connection{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;color:#93a478}.story-connection>span{width:4px;height:4px;border-radius:50%;background:#a4b18c}.story-running .story-connection>span{animation:story-dot 1.5s ease-in-out 3}.story-connection>span:nth-child(2){animation-delay:.2s}.story-connection>span:nth-child(3){animation-delay:.4s}.story-service{width:30%;display:flex;flex-direction:column;align-items:center;gap:9px;padding:14px 8px;color:#476a4e;background:#eef3e7;border:1px solid #dce6d0;border-radius:10px}.story-service>span{text-align:center;font-size:8px;line-height:1.6;letter-spacing:.6px}.story-message{display:flex;gap:11px;align-items:flex-start;border:1px solid #e0e5d6;padding:14px;border-radius:9px;background:#fff;margin-top:18px;box-shadow:0 3px 10px #3d583008}.message-avatar{display:grid;place-items:center;background:#eff3e7;color:#5a7849;border-radius:8px;width:31px;height:31px;flex-shrink:0}.story-message strong{font-size:12px;line-height:1.6;display:block}.story-message p{font-size:11px;margin-top:3px;color:#6b7762;line-height:1.6}.story-tasks{display:flex;flex-wrap:wrap;gap:8px 13px;margin-top:13px}.story-tasks>span{display:flex;align-items:center;gap:5px;font-size:9px;color:#527043}.story-explanation{font-size:11px;line-height:1.8;margin-top:12px;min-height:40px}.story-result{margin:0 25px;display:flex;align-items:center;gap:10px;padding:14px;border-radius:8px;background:#eaf1dc;color:#3c6232;min-height:52px}.story-result>span{display:grid;place-items:center;width:25px;height:25px;background:#d8e6c6;border-radius:50%;flex-shrink:0}.story-result strong{font-size:12px;line-height:1.6}.story-bottom{display:flex;justify-content:space-between;gap:10px;padding:15px 25px;font-size:8px;color:#79816a}.story-bottom>span:first-child{display:flex;gap:5px;align-items:center}.story-progress{height:3px;background:#f0f0e5}.story-progress>span{display:block;height:100%;width:100%;transform-origin:left;background:#8aab64;animation:story-progress 5.2s linear both}@keyframes story-enter{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:none}}@keyframes story-dot{0%,100%{opacity:.3;transform:translateX(0)}50%{opacity:1;transform:translateX(3px)}}@keyframes story-progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:980px){.story-heading{padding:21px 18px 17px}.story-heading h2{font-size:17px}.story-stage{padding-inline:18px}.story-route{padding-inline:13px;gap:4px}.story-route small{font-size:8px}.story-result{margin-inline:18px}.story-bottom{padding-inline:18px}.shop-front strong{font-size:10px}.shop-front>span{font-size:7px}.story-explanation{min-height:58px}}
+@media(max-width:720px){.story-heading h2{font-size:18px}.story-heading{padding:23px 18px 18px}.story-eyebrow{font-size:7px}.story-controls{gap:4px}.story-controls button{width:32px;height:32px}.story-route small{font-size:8px}.story-stage{min-height:310px}.story-explanation{font-size:12px;min-height:61px}.story-message p{font-size:11px}.story-tasks>span{font-size:9px}.story-result strong{font-size:12px}.shop-front strong{font-size:11px}.story-bottom{font-size:8px}.story-service>span{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.story-stage,.story-running .story-connection>span,.story-progress>span{animation:none!important}.story-progress>span{transform:scaleX(1)}}
+/* An opportunity-capture factory, explained through movement rather than text. */
+.factory-scene{border-block:1px solid #e8e4d7;background:#fbfaf4;padding:8px 0}.factory-scene svg{display:block;width:100%;height:auto}.factory-scene text{font-family:'DM Sans',Arial,sans-serif;font-size:12px;fill:#4c6246}.factory-scene .factory-label{font-size:10px;letter-spacing:1.3px;fill:#7a765f}.source-labels text{font-size:10px;text-anchor:middle;fill:#7c826d}.funnel-body{fill:#f0ecdf;stroke:#cabea5;stroke-width:2;transition:fill .7s,stroke .7s}.funnel-rim{stroke:#b9ac91;stroke-width:5;stroke-linecap:round}.funnel-gap{stroke:#fbfaf4;stroke-width:11}.incoming{color:#9baf87;animation:factory-in 3.6s linear infinite;animation-play-state:paused;opacity:0}.token-one{--sx:120px;animation-delay:0s}.token-two{--sx:265px;animation-delay:1.2s}.token-three{--sx:395px;animation-delay:2.4s}.token-four{--sx:180px;display:none;animation-delay:1.8s}.leak{color:#c28e69;opacity:0;animation:factory-leak 4s ease-in infinite;animation-play-state:paused}.leak-left{--fromx:168px;--tox:80px;animation-delay:.7s}.leak-right{--fromx:353px;--tox:445px;animation-delay:2.2s}.lost-note text{font-size:9px;fill:#b17e5c}.manual-caption{fill:#9b8d6a!important;font-size:11px!important}.factory-belt-back{fill:none;stroke:#dddacb;stroke-width:15;stroke-linejoin:round;stroke-linecap:round}.factory-belt{fill:none;stroke:#adbea0;stroke-width:3;stroke-dasharray:3 12;animation:belt-move 1.8s linear infinite;animation-play-state:paused}.capture-gate,.engine,.customer-love{opacity:0;transition:opacity .7s}.capture-gate rect,.engine rect{fill:#fff;stroke:#92ae79;stroke-width:2}.capture-gate text,.engine text{font-size:12px;font-weight:600}.factory-scene .gate-small{font-size:9px;font-weight:400;fill:#7b866a}.payment{opacity:.35;transition:opacity .7s}.factory-scene .money-symbol{font-size:19px;font-weight:700;fill:#48703b}.factory-outcome rect{fill:#eee7da;transition:fill .6s}.factory-outcome text{font-size:11px;fill:#8b7656}.work-token{opacity:0;animation:work-move 2s linear infinite;animation-play-state:paused}.work-two{animation-delay:1s}.gear{animation:gear-turn 5s linear infinite;animation-play-state:paused}.customer-love text{fill:#b97762;font-size:27px;animation:love-rise 2.8s ease-in-out infinite;animation-play-state:paused}.love-two{animation-delay:1.1s!important;font-size:20px!important}.factory-caption{padding:19px 25px 15px;min-height:119px}.factory-caption strong{font-size:17px;line-height:1.45;display:block;letter-spacing:-.3px}.factory-caption p{font-size:12px;line-height:1.8;margin-top:7px}.factory-chapters{grid-template-columns:repeat(4,1fr);padding:5px 23px 18px;border-bottom:0}.factory-chapters button>span{height:25px;width:25px;border-radius:50%;font-size:10px}.factory-chapters button:not(:last-child):after{top:12px;left:calc(50% + 18px);right:calc(-50% + 12px)}.factory-chapters small{font-size:9px}.opportunity-factory .story-bottom{padding-top:0}.factory-running .incoming,.factory-running .leak,.factory-running .factory-belt,.factory-running .work-token,.factory-running .gear,.factory-running .customer-love text{animation-play-state:running}.phase-1 .capture-gate,.phase-2 .capture-gate,.phase-3 .capture-gate{opacity:1}.phase-1 .leak,.phase-2 .leak,.phase-3 .leak,.phase-1 .lost-note,.phase-2 .lost-note,.phase-3 .lost-note,.phase-1 .manual-caption,.phase-2 .manual-caption,.phase-3 .manual-caption,.phase-1 .funnel-gap,.phase-2 .funnel-gap,.phase-3 .funnel-gap{display:none}.phase-1 .funnel-body,.phase-2 .funnel-body,.phase-3 .funnel-body{fill:#e8efdf;stroke:#9eb58c}.phase-2 .engine,.phase-3 .engine{opacity:1}.phase-2 .manual-work,.phase-3 .manual-work{display:none}.phase-2 .payment,.phase-3 .payment,.phase-3 .customer-love{opacity:1}.phase-0 .work-token,.phase-1 .work-token{display:none}.phase-0 .factory-belt,.phase-1 .factory-belt{animation-duration:8s}.phase-3 .incoming{animation-duration:2.4s}.phase-3 .token-four{display:block}.phase-1 .factory-outcome rect,.phase-2 .factory-outcome rect,.phase-3 .factory-outcome rect{fill:#e4edd7}.phase-1 .factory-outcome text,.phase-2 .factory-outcome text,.phase-3 .factory-outcome text{fill:#4e713e}.opportunity-factory:not(.factory-running) .incoming{opacity:1;transform:translate(var(--sx),76px);animation:none}.opportunity-factory:not(.factory-running) .leak{opacity:.7;transform:translate(var(--tox),166px);animation:none}.opportunity-factory:not(.factory-running) .work-token{opacity:1;transform:translate(382px,264px);animation:none}
+@keyframes factory-in{0%{transform:translate(var(--sx),58px);opacity:0}15%{opacity:1}65%{transform:translate(260px,129px);opacity:1}100%{transform:translate(260px,218px);opacity:0}}@keyframes factory-leak{0%{transform:translate(var(--fromx),132px) rotate(0);opacity:0}20%{opacity:1}85%{opacity:.65}100%{transform:translate(var(--tox),203px) rotate(20deg);opacity:0}}@keyframes belt-move{to{stroke-dashoffset:-30}}@keyframes work-move{0%{transform:translate(260px,230px);opacity:0}20%{opacity:1}40%{transform:translate(270px,264px)}90%{opacity:1}100%{transform:translate(444px,264px);opacity:0}}@keyframes gear-turn{to{transform:rotate(360deg)}}@keyframes love-rise{0%,100%{transform:translateY(5px);opacity:.45}50%{transform:translateY(-8px);opacity:1}}
+@media(max-width:720px){.factory-caption{padding:18px 19px 13px;min-height:132px}.factory-caption strong{font-size:16px}.factory-caption p{font-size:12px}.factory-chapters{padding-inline:15px}.factory-chapters small{font-size:8px}.opportunity-factory .story-bottom{font-size:7px}.opportunity-factory .story-heading h2{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.opportunity-factory *{animation:none!important;transition:none!important}.opportunity-factory .incoming{opacity:1;transform:translate(var(--sx),76px)}.opportunity-factory .leak{opacity:.7;transform:translate(var(--tox),166px)}.opportunity-factory .work-token{opacity:1;transform:translate(382px,264px)}}
+
+/* Keep the opening story within the first screen. */
+.nav-wrap{height:64px}
+.business-hero.calm-hero{padding-block:22px;gap:40px}
+.business-intro h1{font-size:clamp(32px,3.4vw,48px)}
+.business-intro>p{margin-top:18px;font-size:15px;line-height:1.7}
+.business-hero-actions{margin-top:20px;gap:13px}
+.business-assurances{margin-top:18px}
+.opportunity-factory .story-heading{padding:12px 18px}
+.opportunity-factory .story-eyebrow{display:none}
+.opportunity-factory .story-heading h2{margin:0;font-size:17px}
+.factory-scene{padding:0}
+.factory-scene svg{height:clamp(210px,calc(100svh - 350px),345px)}
+.factory-caption{padding:12px 18px;min-height:91px}
+.factory-caption strong{font-size:15px}
+.factory-caption p{margin-top:4px;line-height:1.6}
+.factory-chapters{padding:4px 18px 12px}
+.opportunity-factory .story-bottom{padding:0 18px 10px}
+.customer-love .currency{fill:#527d40;font-size:25px;font-weight:700}
+.currency-dollar{animation-delay:.4s!important}
+.currency-euro{animation-delay:1.5s!important}
+.currency-pound{animation-delay:2s!important}
+@media(max-width:720px){
+ .nav-wrap{height:54px}
+ .business-hero.calm-hero{padding-block:12px;gap:14px}
+ .business-intro .eyebrow{font-size:7px;margin-bottom:7px}
+ .business-intro h1{font-size:27px;line-height:1.12;letter-spacing:-1px}
+ .business-intro h1 br:first-of-type{display:none}
+ .business-intro h1 span:before{content:' '}
+ .business-intro>p,.business-assurances,.business-hero-actions .text-link{display:none}
+ .business-hero-actions{margin-top:10px}
+ .business-hero-actions .primary{min-height:42px;padding:10px 16px;font-size:12px}
+ .opportunity-factory .story-heading{padding:9px 12px;gap:6px}
+ .opportunity-factory .story-heading h2{font-size:14px;letter-spacing:-.4px}
+ .story-controls button{width:30px;height:30px}
+ .factory-scene svg{height:clamp(180px,calc(100svh - 477px),275px)}
+ .factory-caption{padding:10px 13px;min-height:87px}
+ .factory-caption strong{font-size:14px}
+ .factory-caption p{font-size:11px;line-height:1.5}
+ .factory-chapters{padding:2px 10px 9px}
+ .factory-chapters button{gap:4px}
+ .factory-chapters small{font-size:8px}
+ .opportunity-factory .story-bottom{padding:0 12px 8px;font-size:7px}
+}
+
+@media(max-width:720px) and (max-height:650px){
+ .factory-scene svg{height:145px}
+ .factory-caption{min-height:0;padding-block:8px}
+ .factory-caption p{display:none}
+ .business-intro h1{font-size:24px}
+}
+
+/* Small rewards emerge from the safe, then rise and fade. */
+.customer-love text{animation-name:reward-pop;animation-duration:2.8s;transform-box:fill-box;transform-origin:center;--drift:0px}
+.customer-love .love-one{--drift:-14px}
+.customer-love .love-two{--drift:10px}
+.customer-love .currency-dollar{--drift:-5px}
+.customer-love .currency-euro{--drift:13px}
+.customer-love .currency-pound{--drift:-10px}
+@keyframes reward-pop{0%{opacity:0;transform:translate(0,34px) scale(.4)}18%{opacity:1;transform:translate(0,12px) scale(1.22)}32%{opacity:1;transform:translate(0,0) scale(1)}76%{opacity:1}100%{opacity:0;transform:translate(var(--drift),-30px) scale(.85)}}
+.opportunity-factory:not(.factory-running) .customer-love text{animation:none;opacity:1}
+
+/* Lead with people; explain the process in the next section. */
+.photo-hero{min-height:min(660px,calc(100svh - 65px))}
+.photo-hero .business-intro h1{font-size:clamp(34px,3.9vw,55px);line-height:1.12}
+.owner-photo{margin:0;position:relative;overflow:hidden;border-radius:18px;background:#e3dacb;align-self:stretch;min-height:380px;max-height:570px}
+.owner-photo>img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:48% 45%}
+.owner-photo:after{content:'';position:absolute;inset:55% 0 0;background:linear-gradient(transparent,#173124d9)}
+.owner-photo figcaption{position:absolute;z-index:1;bottom:27px;left:26px;right:20px;color:#fffdf6}
+.owner-photo figcaption span{display:block;font-size:9px;letter-spacing:1.7px;margin-bottom:9px}
+.owner-photo figcaption strong{font-size:21px;line-height:1.35;display:block;max-width:280px}
+.automation-story-section{background:#f2f3eb;border-block:1px solid #e0e3d5;padding:48px 0}
+.automation-story-layout{display:grid;grid-template-columns:1fr 1.05fr;gap:65px;align-items:center}
+.automation-story-intro h2{font-size:clamp(30px,3vw,43px);line-height:1.18}
+.automation-story-intro>p{font-size:15px;line-height:1.85;margin:22px 0}
+@media(max-width:720px){
+ .photo-hero{min-height:0}
+ .photo-hero .business-intro h1{font-size:32px}
+ .photo-hero .business-intro h1 br:first-of-type{display:initial}
+ .photo-hero .business-intro h1 span:before{content:none}
+ .photo-hero .business-intro>p{display:block;font-size:13px;line-height:1.65;margin-top:12px}
+ .owner-photo{height:clamp(210px,35svh,310px);min-height:0;align-self:auto}
+ .owner-photo>img{object-position:50% 40%}
+ .owner-photo figcaption{bottom:17px;left:18px}
+ .owner-photo figcaption span{font-size:8px;margin-bottom:5px}
+ .owner-photo figcaption strong{font-size:17px;max-width:none}
+ .automation-story-section{padding:32px 0}
+ .automation-story-layout{grid-template-columns:1fr;gap:24px}
+ .automation-story-intro>p{font-size:14px;margin:15px 0}
+ .automation-story-layout .factory-scene svg{height:auto}
+}
+
+/* Full-width story: one readable stage per step of the business pipeline. */
+.automation-story-layout{display:block}
+.automation-story-intro{max-width:740px;margin:0 auto 30px;text-align:center}
+.automation-story-intro .eyebrow{justify-content:center}
+.automation-story-intro h2 br{display:none}
+.automation-story-intro h2 br:after{content:' '}
+.wide-pipeline .story-heading{padding:22px 25px;border-bottom:1px solid #e7e5d9}
+.pipeline-kicker{font-size:9px;letter-spacing:1.4px;color:#7a775f;display:block;margin-bottom:7px}
+.wide-pipeline .story-heading h2{font-size:20px}
+.pipeline-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:25px;gap:32px}
+.pipeline-stop{position:relative;min-width:0;border-radius:12px;padding:12px;transition:background .5s,box-shadow .5s;display:flex;flex-direction:column}
+.pipeline-stop.is-current{background:#f0f4e8;box-shadow:0 0 0 1px #c6d5b6}
+.pipeline-stop:first-child.is-current{background:#faf0e5;box-shadow:0 0 0 1px #e6ccb1}
+.pipeline-visual{height:185px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;position:relative}
+.enquiries-visual{flex-direction:column}
+.enquiry-icons{display:flex;gap:23px;color:#9c865f}
+.enquiry-icons svg{width:19px;height:19px}
+.pipeline-visual>svg{width:100%;height:100%;max-width:210px;overflow:visible}
+.pipeline-visual text{font-family:var(--font);font-size:10px;fill:#947452}
+.pipeline-number{font-size:8px;letter-spacing:.8px;color:#7b806b;font-weight:700;margin-bottom:10px}
+.pipeline-stop h3{font-size:19px;line-height:1.35;letter-spacing:-.4px;min-height:52px}
+.pipeline-stop p{font-size:13px;line-height:1.8;margin:12px 0 20px}
+.pipeline-benefit{margin-top:auto;border-top:1px solid #dce3d1;padding-top:13px;font-size:12px;color:#42683e;font-weight:600;line-height:1.6}
+.problem-benefit{color:#a05f38;border-color:#e8d8c4}
+.capture-machine,.automation-machine{width:100%;max-width:195px;padding:17px 12px;border:2px solid #d8dece;border-radius:13px;background:#fffdf9;display:flex;align-items:center;flex-direction:column;gap:8px;color:#819074;transition:border-color .5s,background .5s}
+.machine-on{background:#f4f8eb;border-color:#8ea874;color:#466d3f}
+.machine-symbol{position:relative}.machine-symbol>span{position:absolute;right:-9px;bottom:-2px;background:#e0edcd;border-radius:50%;padding:3px;display:flex}
+.capture-machine strong,.automation-machine strong{font-size:13px}
+.capture-machine small{font-size:9px}
+.mini-enquiry{border:1px solid #dbe5ce;padding:6px;background:#fff;border-radius:5px;font-size:8px;display:flex;gap:5px;align-items:center}
+.mini-enquiry>span{width:5px;height:5px;border-radius:50%;background:#83a368}
+.pipeline-tasks{display:grid;gap:7px;font-size:10px}
+.pipeline-tasks span{display:flex;align-items:center;gap:6px}
+.pipeline-link{position:absolute;left:calc(100% + 3px);top:97px;width:26px;height:18px;display:flex;align-items:center;color:#b4c39f;z-index:1}
+.pipeline-link svg{width:22px}.pipeline-link i{position:absolute;width:5px;height:5px;border-radius:50%;background:#63824c;opacity:0}
+.pipeline-summary{border-top:1px solid #e7e5d9;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:10px 20px;gap:20px;background:#fafbf5}
+.wide-pipeline .factory-caption{min-height:100px}
+.wide-pipeline .factory-chapters{padding:12px 0}
+.wide-pipeline .story-bottom{padding:12px 25px;font-size:9px}
+.pipeline-message{color:#7c976a}.pipeline-leak{color:#c08861}
+.pipeline-rewards{opacity:0}.phase-3 .pipeline-rewards{opacity:1}
+.pipeline-rewards text{font-size:25px;fill:#528044;font-weight:700}
+.pipeline-rewards text:first-child{fill:#b36e55}
+.factory-running .pipeline-message{animation:pipeline-arrive 2.6s ease-in infinite}
+.factory-running .pipeline-leak{animation:pipeline-loss 3s ease-in infinite}
+.factory-running.phase-2 .pipeline-gear,.factory-running.phase-3 .pipeline-gear{animation:gear-turn 6s linear infinite}
+.factory-running .machine-on .mini-enquiry{animation:pipeline-received 2.6s ease-in-out infinite}
+.factory-running .pipeline-link i{animation:pipeline-travel 2s linear infinite}
+.factory-running.phase-3 .pipeline-rewards text{animation:reward-pop 2.8s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.pipeline-rewards text:nth-child(2){animation-delay:.7s!important}.pipeline-rewards text:nth-child(3){animation-delay:1.4s!important}.pipeline-rewards text:nth-child(4){animation-delay:2.1s!important}
+@keyframes pipeline-arrive{0%{transform:translateY(-20px);opacity:0}25%{opacity:1}100%{transform:translateY(48px);opacity:0}}
+@keyframes pipeline-loss{0%{transform:translate(25px,-40px);opacity:0}30%{opacity:1}100%{transform:translate(-8px,12px);opacity:0}}
+@keyframes pipeline-received{50%{background:#dfeecd}}
+@keyframes pipeline-travel{0%{transform:translateX(-7px);opacity:0}20%,80%{opacity:1}100%{transform:translateX(23px);opacity:0}}
+@media(max-width:980px) and (min-width:721px){.pipeline-track{gap:15px;padding:16px}.pipeline-stop{padding:8px}.pipeline-stop h3{font-size:16px}.pipeline-stop p{font-size:12px}.pipeline-link{width:16px;left:100%}.pipeline-link svg{width:15px}.pipeline-number{font-size:7px}.pipeline-visual{height:165px}}
+@media(max-width:720px){.automation-story-intro{text-align:left}.automation-story-intro .eyebrow{justify-content:flex-start}.wide-pipeline .story-heading{padding:18px 15px}.wide-pipeline .story-heading h2{font-size:17px}.pipeline-kicker{font-size:8px}.pipeline-track{grid-template-columns:1fr;gap:25px;padding:17px}.pipeline-stop{display:grid;grid-template-columns:90px 1fr;gap:0 15px;padding:13px 10px}.pipeline-visual{grid-column:1;grid-row:1/5;height:160px;align-self:center;margin:0}.pipeline-number,.pipeline-stop h3,.pipeline-stop p,.pipeline-benefit{grid-column:2}.pipeline-stop h3{font-size:17px;min-height:0}.pipeline-stop p{font-size:12px;margin:9px 0 12px}.pipeline-number{font-size:7px;line-height:1.5;margin-bottom:6px}.pipeline-benefit{font-size:11px;padding-top:9px}.enquiry-icons{gap:8px}.enquiry-icons svg{width:15px}.capture-machine,.automation-machine{padding:12px 5px;gap:9px}.capture-machine strong,.automation-machine strong{font-size:10px;text-align:center}.capture-machine small{font-size:8px;text-align:center}.mini-enquiry{font-size:7px;text-align:center}.pipeline-tasks{font-size:8px}.pipeline-tasks span{gap:3px}.pipeline-tasks svg{width:11px}.pipeline-link{top:calc(100% + 5px);left:42px;transform:rotate(90deg)}.pipeline-summary{grid-template-columns:1fr;padding:12px 15px;gap:0}.wide-pipeline .factory-caption{padding:5px 0;min-height:0}.wide-pipeline .factory-caption p{display:block}.wide-pipeline .story-bottom{font-size:8px;padding:12px 15px;flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){.wide-pipeline *{animation:none!important;transition:none!important}}
+
+/* A single connected animated pipeline, with minimal labels. */
+.automation-story-intro{margin-bottom:24px;max-width:none}
+.automation-story-intro>p,.automation-story-intro>.text-link,.automation-story-intro>.eyebrow{display:none}
+.automation-story-intro h2{font-size:32px}
+.connected-pipeline .pipeline-track{gap:48px;padding:32px 30px 24px}
+.connected-pipeline .pipeline-stop{padding:0;background:transparent;box-shadow:none;display:flex;flex-direction:column}
+.connected-pipeline .pipeline-visual{height:190px;margin-bottom:16px;z-index:2}
+.connected-pipeline .pipeline-number,.connected-pipeline .pipeline-stop p,.connected-pipeline .pipeline-benefit,.connected-pipeline .pipeline-kicker,.connected-pipeline .factory-caption{display:none}
+.connected-pipeline .pipeline-stop h3{text-align:center;font-size:16px;min-height:0;line-height:1.4}
+.connected-pipeline .pipeline-stop.is-current h3{color:#287447}
+.connected-pipeline .pipeline-link{top:100px;left:calc(100% - 20px);width:88px;height:12px;background:#e1e6d7;border-radius:6px;z-index:1;overflow:hidden}
+.connected-pipeline .pipeline-link svg{position:absolute;right:4px;width:13px;height:13px;color:#80966b}
+.connected-pipeline .pipeline-link i{left:0;width:8px;height:8px;background:#729453;border-radius:3px}
+.connected-pipeline .pipeline-summary{display:block;padding:10px 24px;background:#f8faf3}
+.connected-pipeline .factory-chapters{max-width:640px;margin:auto;padding:0}
+.connected-pipeline .pipeline-rewards text{--drift:0px}
+.connected-pipeline .pipeline-link i{animation-name:connected-travel}
+@keyframes connected-travel{0%{transform:translateX(-8px);opacity:0}15%,85%{opacity:1}100%{transform:translateX(88px);opacity:0}}
+@media(max-width:720px){
+ .connected-pipeline .pipeline-track{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:18px 10px}
+ .connected-pipeline .pipeline-visual{height:110px;margin-bottom:9px}
+ .connected-pipeline .pipeline-stop h3{font-size:10px;line-height:1.5}
+ .connected-pipeline .pipeline-link{transform:none;top:57px;left:calc(100% - 6px);width:24px;height:8px}
+ .connected-pipeline .pipeline-link i{width:5px;height:5px}
+ .connected-pipeline .pipeline-link svg{width:9px;height:9px;right:1px}
+ .connected-pipeline .capture-machine,.connected-pipeline .automation-machine{padding:9px 3px;gap:5px;border-radius:7px;border-width:1px}
+ .connected-pipeline .capture-machine strong,.connected-pipeline .capture-machine small,.connected-pipeline .automation-machine strong,.connected-pipeline .mini-enquiry,.connected-pipeline .pipeline-tasks{display:none}
+ .connected-pipeline .machine-symbol>svg,.connected-pipeline .pipeline-gear{width:26px;height:26px}
+ .connected-pipeline .enquiry-icons{gap:4px}
+ .connected-pipeline .enquiry-icons svg{width:10px;height:10px}
+ .connected-pipeline .enquiries-visual>svg text{display:none}
+ .connected-pipeline .pipeline-summary{padding:12px 10px}
+ .connected-pipeline .story-heading h2{font-size:15px}
+ .automation-story-intro h2{font-size:26px;text-align:center}
+}
+
+.connected-pipeline .pipeline-link{left:50%;width:calc(100% + 48px)}
+.connected-pipeline .pipeline-link i{animation-name:connected-stream}
+@keyframes connected-stream{0%{left:0;opacity:0}15%,85%{opacity:1}100%{left:100%;opacity:0}}
+@media(max-width:720px){.connected-pipeline .pipeline-link{left:50%;width:calc(100% + 12px)}}
+
+/* Matching stations with a shared baseline and dotted connections. */
+.connected-pipeline .pipeline-visual{height:190px;width:100%;max-width:210px;align-self:center;border:1px solid #cdd9bf;border-radius:16px;background:#f5f8ee;box-shadow:0 4px 12px #314c2907;padding:15px;margin-bottom:18px}
+.connected-pipeline .enquiries-visual{background:#f5f8ee}
+.connected-pipeline .capture-machine,.connected-pipeline .automation-machine{height:100%;width:100%;max-width:none;padding:10px 4px;justify-content:center;background:transparent;border:0;border-radius:0;box-shadow:none}
+.connected-pipeline .pipeline-visual>svg{max-width:175px}
+.connected-pipeline .enquiries-visual>svg{height:130px}
+.connected-pipeline .enquiry-icons{margin-top:2px;gap:22px}
+.connected-pipeline .pipeline-stop.is-current .pipeline-visual{border-color:#73935c;box-shadow:0 0 0 2px #dae7c9}
+.connected-pipeline .pipeline-link{top:93px;height:4px;background:radial-gradient(circle,#95aa7f 1.6px,transparent 1.9px) left center/9px 4px repeat-x;border-radius:0;overflow:visible}
+.connected-pipeline .pipeline-link svg{display:none}
+.connected-pipeline .pipeline-link i{width:6px;height:6px;top:-1px;border-radius:50%;background:#477237}
+.connected-pipeline .pipeline-stop h3{min-height:44px;display:flex;align-items:flex-start;justify-content:center}
+@media(max-width:980px) and (min-width:721px){.connected-pipeline .pipeline-track{gap:26px;padding:24px 20px}.connected-pipeline .pipeline-link{width:calc(100% + 26px)}.connected-pipeline .pipeline-visual{height:170px;padding:10px}.connected-pipeline .pipeline-link{top:83px}.connected-pipeline .pipeline-stop h3{font-size:14px}}
+@media(max-width:720px){.connected-pipeline .pipeline-track{gap:12px;padding:18px 10px}.connected-pipeline .pipeline-visual{height:98px;padding:5px 3px;border-radius:9px;margin-bottom:12px}.connected-pipeline .pipeline-link{top:47px;height:3px;background-size:6px 3px}.connected-pipeline .pipeline-link i{width:4px;height:4px;top:0}.connected-pipeline .enquiries-visual>svg{height:65px}.connected-pipeline .enquiry-icons{gap:4px;margin-top:0}.connected-pipeline .capture-machine,.connected-pipeline .automation-machine{padding:0;justify-content:center}.connected-pipeline .pipeline-stop h3{font-size:10px;min-height:45px}.connected-pipeline .machine-symbol>svg,.connected-pipeline .pipeline-gear{width:25px;height:25px}}
+
+/* Keep the first station free of the old selection frame. */
+.connected-pipeline .pipeline-stop:first-child.is-current{background:transparent;box-shadow:none}
+.connected-pipeline .pipeline-stop:first-child.is-current .pipeline-visual{border-color:#cdd9bf;box-shadow:0 4px 12px #314c2907}
+
+/* Only the processing station moves; other stations remain quietly visible. */
+.connected-pipeline .pipeline-stop .pipeline-visual{transition:filter .45s,opacity .45s,background .45s,border-color .45s;filter:grayscale(.8);opacity:.55;background:#f2f3ef;box-shadow:none}
+.connected-pipeline .pipeline-stop h3{color:#7b8276;transition:color .45s}
+.connected-pipeline .pipeline-stop.is-current .pipeline-visual,
+.connected-pipeline .pipeline-stop:first-child.is-current .pipeline-visual{filter:none;opacity:1;background:#edf5e2;border-color:#85a569;box-shadow:none}
+.connected-pipeline .pipeline-stop.is-current h3{color:#246442}
+.connected-pipeline .pipeline-stop *{animation-play-state:paused!important}
+.connected-pipeline.factory-running .pipeline-stop.is-current *{animation-play-state:running!important}
+.connected-pipeline .pipeline-stop:not(.is-current) .pipeline-link i{opacity:0!important}
+.connected-pipeline .pipeline-stop:not(.is-current) .pipeline-link{opacity:.45}
+.connected-pipeline.factory-running .is-current .enquiry-icons svg{animation:enquiry-nudge 2.4s ease-in-out infinite}
+.connected-pipeline .enquiry-icons svg:nth-child(2){animation-delay:.4s!important}
+.connected-pipeline .enquiry-icons svg:nth-child(3){animation-delay:.8s!important}
+.connected-pipeline.factory-running .is-current .machine-symbol>span{animation:reply-confirm 2.4s ease-in-out infinite}
+.connected-pipeline.factory-running .is-current .mini-enquiry{animation:enquiry-captured 2.4s ease-in-out infinite}
+.connected-pipeline.factory-running .is-current .pipeline-tasks span{animation:task-processed 2.8s ease-in-out infinite;border-radius:4px}
+.connected-pipeline .pipeline-tasks span:nth-child(2){animation-delay:1.4s!important}
+@keyframes enquiry-nudge{0%,70%,100%{transform:translateY(0)}20%{transform:translateY(-4px)}35%{transform:translateY(0)}}
+@keyframes reply-confirm{0%,100%{transform:scale(.8);opacity:.5}25%,70%{transform:scale(1.12);opacity:1}}
+@keyframes enquiry-captured{0%,100%{transform:translateY(4px);opacity:.35}25%,75%{transform:translateY(0);opacity:1;background:#dcebc9}}
+@keyframes task-processed{0%,100%{background:transparent;transform:translateX(0)}35%,65%{background:#dcebc9;transform:translateX(3px)}}
+@media(prefers-reduced-motion:reduce){.connected-pipeline .pipeline-stop *{animation:none!important;transition:none!important}}
+
+/* Connect station edges only, leaving a clear gap at either end. */
+.connected-pipeline .pipeline-link{left:calc(50% + min(105px, 50%) + 4px);width:calc(100% + 40px - min(210px, 100%));overflow:hidden}
+.connected-pipeline .pipeline-link i{top:0;width:4px;height:4px}
+.connected-pipeline .pipeline-tasks{width:100%;gap:5px;font-size:10px}
+.connected-pipeline .pipeline-tasks span{padding:3px 2px;gap:5px;white-space:nowrap}
+.connected-pipeline .task-done{margin-left:auto;color:#337246;flex-shrink:0}
+.connected-pipeline .time-returned{font-size:10px;color:#337246;font-weight:600;text-align:center;border-top:1px solid #d7e5c7;padding-top:5px;width:100%}
+.connected-pipeline .automation-machine{gap:5px}
+.connected-pipeline .pipeline-gear{width:27px;height:27px}
+.connected-pipeline.factory-running .is-current .pipeline-tasks span{animation:automation-clear-task 6s ease both infinite}
+.connected-pipeline.factory-running .is-current .pipeline-tasks .task-done{animation:automation-check 6s ease both infinite}
+.connected-pipeline .pipeline-tasks span:nth-child(2),.connected-pipeline .pipeline-tasks span:nth-child(2) .task-done{animation-delay:.8s!important}
+.connected-pipeline .pipeline-tasks span:nth-child(3),.connected-pipeline .pipeline-tasks span:nth-child(3) .task-done{animation-delay:1.6s!important}
+.connected-pipeline.factory-running .is-current .time-returned{animation:time-back 6s ease both infinite}
+@keyframes automation-clear-task{0%,8%{opacity:.4;background:#e8e7df;transform:translateX(-4px)}20%,85%{opacity:1;background:#dceecb;transform:translateX(0)}100%{opacity:1;background:transparent}}
+@keyframes automation-check{0%,12%{opacity:0;transform:scale(.3)}23%{opacity:1;transform:scale(1.25)}30%,100%{opacity:1;transform:scale(1)}}
+@keyframes time-back{0%,45%{opacity:.35;transform:translateY(3px)}60%,100%{opacity:1;transform:translateY(0)}}
+@media(max-width:980px) and (min-width:721px){.connected-pipeline .pipeline-link{left:calc(100% + 4px);width:18px}.connected-pipeline .pipeline-tasks{font-size:8px}.connected-pipeline .time-returned{font-size:8px}.connected-pipeline .automation-machine strong{font-size:10px}.connected-pipeline .automation-machine{gap:3px}}
+@media(max-width:720px){.connected-pipeline .pipeline-link{left:calc(100% + 3px);width:6px}.connected-pipeline .time-returned{display:none}.connected-pipeline .automation-machine .pipeline-tasks{display:flex;width:auto;gap:3px}.connected-pipeline .pipeline-tasks span{padding:0;font-size:0;gap:0;background:none!important}.connected-pipeline .pipeline-tasks span>svg:first-child{display:none}.connected-pipeline .pipeline-tasks .task-done{width:11px;height:11px}.connected-pipeline .automation-machine{gap:7px}}
+@media(prefers-reduced-motion:reduce){.connected-pipeline .pipeline-stop *{animation:none!important;transition:none!important}}
+
+/* Show the same pipeline before and after help is introduced. */
+.pipeline-comparison{display:flex;align-items:center;gap:17px;padding:16px 25px;background:#faf9f4;border-bottom:1px solid #e5e6da}
+.comparison-state{font-size:9px;letter-spacing:1px;font-weight:700;border-radius:20px;padding:7px 11px;white-space:nowrap}
+.before-state{background:#f2e4d7;color:#925b39}.after-state{background:#deedce;color:#376438}
+.pipeline-comparison p{font-size:13px;line-height:1.5}
+.pipeline-comparison button{margin-left:auto;display:flex;align-items:center;gap:8px;background:#2d6845;color:white;border-radius:6px;padding:10px 13px;font-size:11px}
+.message-backlog{display:none;gap:7px;color:#b38665}
+.phase-0 .message-backlog{display:flex}
+.comparison-pipeline.phase-0 .machine-symbol>span{display:none}
+.comparison-pipeline.phase-0 .mini-enquiry{background:#f3e4d6;border-color:#dfc9b3;color:#986442}
+.comparison-pipeline.phase-0 .pipeline-stop:nth-child(-n+3) .pipeline-visual{opacity:1;filter:none;background:#faf3e9;border-color:#dbc9b0}
+.comparison-pipeline.phase-0 .pipeline-stop:nth-child(-n+3) h3{color:#95603d}
+.comparison-pipeline.phase-0 .pipeline-link i{display:none}
+.comparison-pipeline.phase-0 .pipeline-link{background:radial-gradient(circle,#c5a789 1.6px,transparent 1.9px) left center/13px 4px repeat-x}
+.comparison-pipeline.phase-0 .pipeline-tasks span,.comparison-pipeline.phase-1 .pipeline-tasks span{background:#efe7db;opacity:1}
+.comparison-pipeline.phase-0 .task-done,.comparison-pipeline.phase-1 .task-done{visibility:hidden}
+.comparison-pipeline.phase-0 .time-returned,.comparison-pipeline.phase-1 .time-returned{color:#9b7758}
+.comparison-pipeline:not(.phase-0) .capture-gaps,.comparison-pipeline:not(.phase-0) .pipeline-leak{display:none}
+.comparison-pipeline:not(.phase-0) .enquiries-visual>svg>path:first-child{fill:#e2efd5;stroke:#8eaa73}
+.comparison-pipeline.phase-1 .pipeline-stop:first-child .pipeline-visual,.comparison-pipeline.phase-2 .pipeline-stop:nth-child(-n+2) .pipeline-visual,.comparison-pipeline.phase-3 .pipeline-stop .pipeline-visual{opacity:1;filter:none;background:#edf5e2;border-color:#85a569}
+.comparison-pipeline.phase-3 .pipeline-stop h3{color:#246442}
+.comparison-pipeline.factory-running.phase-0 .message-backlog svg{animation:backlog-build 3s ease-in-out infinite;animation-play-state:running!important}
+.comparison-pipeline .message-backlog svg:nth-child(2){animation-delay:.5s}.comparison-pipeline .message-backlog svg:nth-child(3){animation-delay:1s}
+.comparison-pipeline.factory-running.phase-0 .waiting-clock{animation:waiting-tick 3s ease-in-out infinite;animation-play-state:running!important}
+.comparison-pipeline.factory-running.phase-3 .pipeline-stop *{animation-play-state:running!important}
+.comparison-pipeline.factory-running.phase-3 .pipeline-link i{opacity:1!important}
+.comparison-pipeline.phase-3 .pipeline-link{opacity:1}
+.comparison-pipeline.factory-running.phase-3 .pipeline-tasks span{animation:automation-clear-task 6s ease both infinite}
+.comparison-pipeline.factory-running.phase-3 .pipeline-tasks .task-done{animation:automation-check 6s ease both infinite}
+.comparison-pipeline.factory-running.phase-3 .mini-enquiry{animation:enquiry-captured 2.4s ease-in-out infinite}
+.comparison-pipeline.factory-running.phase-3 .machine-symbol>span{animation:reply-confirm 2.4s ease-in-out infinite}
+@keyframes backlog-build{0%{opacity:.2;transform:translateY(-6px)}40%,85%{opacity:1;transform:translateY(0)}100%{opacity:.2}}
+@keyframes waiting-tick{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+@media(max-width:720px){.pipeline-comparison{padding:12px;gap:9px;flex-wrap:wrap}.comparison-state{font-size:8px}.pipeline-comparison p{font-size:11px;flex:1;min-width:120px}.pipeline-comparison button{margin-left:0;font-size:11px}.message-backlog{gap:2px}.message-backlog svg{width:12px}.comparison-pipeline.phase-0 .pipeline-tasks,.comparison-pipeline.phase-1 .pipeline-tasks{display:none}}
+@media(prefers-reduced-motion:reduce){.comparison-pipeline .pipeline-stop *{animation:none!important;transition:none!important}}
+
+/* Simplified presentation aligned with the warm homepage palette. */
+.automation-story-section{background:#faf6ed;padding-block:46px}
+.automation-story-intro{margin-bottom:24px}
+.simple-story{background:#fffdf8;border-color:#e3decf;box-shadow:none;border-radius:16px}
+.simple-story .story-heading{border:0;padding:22px 25px 12px}
+.simple-story .story-heading h2{font-size:18px;color:#294b38}
+.simple-story .pipeline-comparison{background:transparent;border:0;padding:4px 25px 22px;gap:22px;min-height:62px}
+.comparison-tabs{display:flex;background:#eeeee4;padding:4px;border-radius:9px;flex-shrink:0;gap:3px}
+.simple-story .comparison-tabs button{margin:0;background:transparent;color:#67715e;padding:9px 15px;font-size:12px;border-radius:6px;min-height:38px}
+.simple-story .comparison-tabs button[aria-pressed=true]{background:#fffdf8;color:#294b38;box-shadow:0 1px 4px #33432c15}
+.simple-story .pipeline-comparison p{font-size:13px;max-width:490px;color:#64705e}
+.simple-story .pipeline-track{padding-top:10px;padding-bottom:24px}
+.simple-story .pipeline-stop .pipeline-visual{background:#f3f3ed!important;border-color:#dfdfd3!important;opacity:.75;filter:grayscale(.7)}
+.simple-story .pipeline-stop.is-current .pipeline-visual,.simple-story.phase-0 .pipeline-stop:nth-child(-n+3) .pipeline-visual{background:#f7f0e5!important;border-color:#e3d7c6!important;opacity:1;filter:none}
+.simple-story:not(.phase-0) .pipeline-stop.is-current .pipeline-visual,.simple-story.phase-3 .pipeline-stop .pipeline-visual{background:#eff4e7!important;border-color:#b9cca6!important;opacity:1;filter:none}
+.simple-story .pipeline-stop h3{font-size:14px;min-height:40px;line-height:1.5;font-weight:600}
+.simple-story .capture-machine>strong,.simple-story .capture-machine>small,.simple-story .automation-machine>strong,.simple-story .time-returned,.simple-story .enquiries-visual text{display:none}
+.simple-story .capture-machine{gap:18px}
+.simple-story .mini-enquiry{font-size:10px;padding:8px;line-height:1.5;text-align:center}
+.simple-story .pipeline-tasks{font-size:11px;gap:9px}
+.simple-story .automation-machine{gap:14px}
+.simple-story .pipeline-rewards text{font-size:21px}
+.simple-story .story-bottom{border-top:1px solid #eee9dc;padding:14px 25px;color:#6d7865;font-size:10px}
+@media(max-width:720px){
+ .simple-story .story-heading{padding:18px 16px 12px}
+ .simple-story .story-heading h2{font-size:16px;line-height:1.4;max-width:190px}
+ .simple-story .pipeline-comparison{padding:0 16px 16px;gap:12px;align-items:flex-start}
+ .simple-story .pipeline-comparison p{flex-basis:100%;min-height:35px;font-size:12px}
+ .simple-story .pipeline-track{padding:4px 12px 20px;gap:10px}
+ .simple-story .pipeline-visual{height:90px}
+ .simple-story .pipeline-link{top:43px;left:calc(100% + 2px);width:6px}
+ .simple-story .pipeline-stop h3{font-size:10px;line-height:1.5;min-height:45px}
+ .simple-story .mini-enquiry{display:none}
+ .simple-story .pipeline-tasks{gap:2px}
+ .simple-story .automation-machine{gap:8px}
+ .simple-story .story-bottom{padding:12px 16px;font-size:9px}
+}

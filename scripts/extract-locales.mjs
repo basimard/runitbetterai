@@ -1,0 +1,4 @@
+﻿import ts from 'typescript';import fs from 'node:fs';
+const files=['website.tsx','welcome.tsx','business-story.tsx','interactions.tsx','sample-view.tsx','content.ts'];const values=new Set();
+for(const f of files){const source=ts.createSourceFile(f,fs.readFileSync('app/'+f,'utf8'),ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);function walk(n){if(ts.isJsxText(n)){const v=n.text.replace(/\s+/g,' ').trim();if(/[a-zA-Z]/.test(v))values.add(v);}if(ts.isStringLiteral(n)&&/[A-Za-z]/.test(n.text)&&((n.text.includes(' ')&&!/^([a-z]+[-:]?)+([ ][a-z]+[-:]?)+$/.test(n.text))|| /^[A-Z]/.test(n.text))&&!ts.isImportDeclaration(n.parent)&&!['POST','Content-Type','ArrowRight','ArrowLeft','DEMO'].includes(n.text))values.add(n.text);ts.forEachChild(n,walk);}walk(source)}
+fs.mkdirSync('app/locales',{recursive:true});fs.writeFileSync('app/locales/inventory.json',JSON.stringify([...values],null,2));console.log(values.size);
